@@ -60,7 +60,7 @@ function App() {
         if (data.access_token) {
           localStorage.setItem('spotify_access_token', data.access_token);
           setToken(data.access_token);
-          window.history.replaceState({}, document.title, '/');
+          window.history.replaceState({}, document.title, window.location.pathname);
         }
       });
     }
