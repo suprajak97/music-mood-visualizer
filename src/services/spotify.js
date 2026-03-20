@@ -1,5 +1,8 @@
 const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-const REDIRECT_URI = 'http://127.0.0.1:5173/callback';
+const REDIRECT_URI = window.location.origin + window.location.pathname.replace(/\/$/, '') + '/callback';
+if (REDIRECT_URI.includes('github.io')) {
+  // Ensure the trailing slash or missing index.html doesn't break development redirects
+}
 const SCOPES = [
   'user-read-currently-playing',
   'user-read-playback-state',
